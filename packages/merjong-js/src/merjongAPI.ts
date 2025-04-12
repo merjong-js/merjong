@@ -80,23 +80,25 @@ const genRenderProfiles = (mpsz: string): RenderProfile[] => {
 const genSVG = (renderProfiles: RenderProfile[]) => {
   const theme = themes.default.getThemeVariables()
   const tileDesigns = theme.tileDesigns
-  const tileWidth = 36
-  const tileHeight = 48
-  const svgHeight = Math.max(tileHeight, tileWidth * 2 + 1)
+  const tileWidth = theme.tileWidth
+  const tileHeight = theme.tileHeight
+  const tileGap = theme.tileGap
+  const spaceWidth = theme.spaceWidth
+  const svgHeight = Math.max(tileHeight, tileWidth * 2 + tileGap)
   let svgInner = ""
 
   let xPosition = 0
   for (const entry of renderProfiles) {
     if (entry.type === "tile" && entry.tileOrient === "upright") {
       svgInner += `<image href="${tileDesigns["base"]}" x="${xPosition}" y="${svgHeight - tileHeight}" width="${tileWidth}" height="${tileHeight}" /><image href="${tileDesigns[entry.tileKey]}" x="${xPosition}" y="${svgHeight - tileHeight}" width="${tileWidth}" height="${tileHeight}" />`
-      xPosition += tileWidth + 1
+      xPosition += tileWidth + tileGap
     } else if (entry.type === "tile" && entry.tileOrient === "sideways") {
       svgInner += `<image href="${tileDesigns["base"]}" x="${-svgHeight}" y="${xPosition}" width="${tileWidth}" height="${tileHeight}" transform="rotate(-90)" /><image href="${tileDesigns[entry.tileKey]}" x="${-svgHeight}" y="${xPosition}" width="${tileWidth}" height="${tileHeight}" transform="rotate(-90)" />`
-      xPosition += tileHeight + 1
+      xPosition += tileHeight + tileGap
     } else if (entry.type === "tile" && entry.tileOrient === "sidewaysTop") {
-      svgInner += `<image href="${tileDesigns["base"]}" x="${tileWidth - svgHeight + 1}" y="${xPosition - tileHeight - 1}" width="${tileWidth}" height="${tileHeight}" transform="rotate(-90)" /><image href="${tileDesigns[entry.tileKey]}" x="${tileWidth - svgHeight + 1}" y="${xPosition - tileHeight - 1}" width="${tileWidth}" height="${tileHeight}" transform="rotate(-90)" />`
+      svgInner += `<image href="${tileDesigns["base"]}" x="${tileWidth - svgHeight + tileGap}" y="${xPosition - tileHeight - tileGap}" width="${tileWidth}" height="${tileHeight}" transform="rotate(-90)" /><image href="${tileDesigns[entry.tileKey]}" x="${tileWidth - svgHeight + tileGap}" y="${xPosition - tileHeight - tileGap}" width="${tileWidth}" height="${tileHeight}" transform="rotate(-90)" />`
     } else {
-      xPosition += Math.max(4, tileWidth / 4)
+      xPosition += Math.max(spaceWidth)
     }
   }
   return `<div style="background-color: green; padding: 0.375rem; border-radius: 6px;"><svg width="100%" height="${svgHeight}" style="display: block;">${svgInner}</svg></div>`

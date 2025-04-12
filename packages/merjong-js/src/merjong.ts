@@ -9,13 +9,12 @@ const contentLoaded = () => {
   merjong.run()
 }
 
-if (typeof document !== 'undefined') {
+if (typeof document !== "undefined") {
   // ! Wait for document loaded before starting the execution
-  window.addEventListener('load', contentLoaded, false)
+  window.addEventListener("load", contentLoaded, false)
 }
 
 const runThrowsErrors = async ({ querySelector = ".merjong", nodes }: RunOptions = {}) => {
-
   let nodesToProcess: ArrayLike<HTMLElement>
 
   if (nodes) {
@@ -23,20 +22,21 @@ const runThrowsErrors = async ({ querySelector = ".merjong", nodes }: RunOptions
   } else if (querySelector) {
     nodesToProcess = document.querySelectorAll(querySelector)
   } else {
-    throw new Error('Nodes and querySelector are both undefined')
+    throw new Error("Nodes and querySelector are both undefined")
   }
 
   nodesToProcess = document.querySelectorAll(querySelector)
 
   for (const element of Array.from(nodesToProcess)) {
+    if (element.dataset.processed) continue
+
     const mpsz = element.innerHTML.trim()
-
     element.innerHTML = await merjongAPI.render(mpsz)
+    element.dataset.processed = "true"
   }
-
 }
 
-const run = async (options: RunOptions = { querySelector: '.merjong' }) => {
+const run = async (options: RunOptions = { querySelector: ".merjong" }) => {
   await runThrowsErrors(options)
 }
 

@@ -5,6 +5,11 @@ class Theme {
   isDarkMode: boolean
   backgroundColor: string
 
+  tileWidth: number
+  tileHeight: number
+  tileGap: number
+  spaceWidth: number
+
   constructor() {
     this.tileDesigns = {
       "base": "https://raw.githubusercontent.com/FluffyStuff/riichi-mahjong-tiles/26e127ba2117f45cdce5ea0225748cc0cfad3169/Regular/Front.svg",
@@ -50,6 +55,11 @@ class Theme {
     }
     this.backgroundColor = "green"
     this.isDarkMode = false
+
+    this.tileWidth = 36
+    this.tileHeight = 48
+    this.tileGap = 3
+    this.spaceWidth = 10
   }
 }
 

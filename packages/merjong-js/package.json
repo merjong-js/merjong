@@ -1,9 +1,10 @@
 {
   "name": "merjong",
-  "version": "1.0.0",
-  "main": "merjong.js",
+  "version": "1.0.1",
+  "main": "dist/merjong.js",
   "scripts": {
-    "build": "tsc",
+    "build": "tsc && npm run bundle",
+    "bundle": "esbuild src/merjong.ts --bundle --minify --format=esm --outfile=dist/merjong.min.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "type": "module",
@@ -12,6 +13,7 @@
   "devDependencies": {
     "@types/jest": "29.5.14",
     "@types/node": "22.14.1",
+    "esbuild": "^0.25.2",
     "ts-jest": "^29.2.5",
     "typescript": "5.8.3"
   }
