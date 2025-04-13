@@ -25,8 +25,6 @@ const runThrowsErrors = async ({ querySelector = ".merjong", nodes }: RunOptions
     throw new Error("Nodes and querySelector are both undefined")
   }
 
-  nodesToProcess = document.querySelectorAll(querySelector)
-
   for (const element of Array.from(nodesToProcess)) {
     if (element.dataset.processed) continue
 

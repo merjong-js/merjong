@@ -47,10 +47,11 @@ const genRenderProfiles = (mpsz: string): RenderProfile[] => {
         const qt = numQt.slice(1)
 
         let tileKey = ""
-        if (char === "x" || char === "q") {
-          tileKey = char
-        } else if (num === "X" || num === "Q") {
+
+        if (num === "X" || num === "Q") {
           tileKey = num.toLowerCase()
+        } else if (char === "x" || char === "q") {
+          tileKey = char
         } else {
           tileKey = `${num}${char}`.toLowerCase()
         }
