@@ -1,20 +1,31 @@
 {
   "name": "merjong",
-  "version": "1.0.1",
+  "version": "1.0.2",
+  "description": "Generation of mahjong tile images from text written in MPSZ notation. ",
   "main": "dist/merjong.js",
+  "type": "module",
+  "author": "Merjong",
+  "license": "MIT",
+  "keywords": [
+    "mahjong",
+    "svg",
+    "mpsz",
+    "renderer",
+    "markdown"
+  ],
   "scripts": {
     "build": "tsc && npm run bundle",
     "bundle": "esbuild src/merjong.ts --bundle --minify --format=esm --outfile=dist/merjong.min.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "type": "module",
-  "author": "",
-  "license": "ISC",
   "devDependencies": {
     "@types/jest": "29.5.14",
     "@types/node": "22.14.1",
     "esbuild": "^0.25.2",
-    "ts-jest": "^29.2.5",
+    "ts-jest": "29.3.2",
     "typescript": "5.8.3"
-  }
+  },
+  "files": [
+    "README.md"
+  ]
 }
