@@ -1,6 +1,6 @@
 {
   "name": "merjong",
-  "version": "1.0.2",
+  "version": "0.0.1",
   "description": "Generation of mahjong tile images from text written in MPSZ notation. ",
   "main": "dist/merjong.js",
   "type": "module",
@@ -16,16 +16,19 @@
   "scripts": {
     "build": "tsc && npm run bundle",
     "bundle": "esbuild src/merjong.ts --bundle --minify --format=esm --outfile=dist/merjong.min.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prepublishOnly": "npx cpy-cli ../../README.md ./README.md"
   },
   "devDependencies": {
     "@types/jest": "29.5.14",
     "@types/node": "22.14.1",
+    "cpy-cli": "^5.0.0",
     "esbuild": "^0.25.2",
     "ts-jest": "29.3.2",
     "typescript": "5.8.3"
   },
   "files": [
+    "dkst/",
     "README.md"
   ]
 }
