@@ -1,5 +1,8 @@
 # Merjong
 
+[![npm version](https://img.shields.io/npm/v/merjong)](https://www.npmjs.com/package/merjong)
+[![jsDelivr](https://data.jsdelivr.com/v1/package/npm/merjong/badge)](https://www.jsdelivr.com/package/npm/merjong)
+
 ## About
 
 Merjong is a JavaScript-based image generation tool that uses MPSZ algebraic notation to create images of mahjong tiles.
@@ -33,7 +36,7 @@ The following are some examples of Mahjong tile images rendered using Merjong.
 ### npm
 
 ```sh
-npm install merjong
+npm i merjong 
 ```
 
 You can then import it in a browser:
