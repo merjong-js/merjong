@@ -2,3 +2,4 @@ dist/
 node_modules/
 package-lock.json
 packages/**/README.md
+packages/merjong-js/README.md
