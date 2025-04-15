@@ -13,7 +13,7 @@ The following are some examples of Mahjong tile images rendered using Merjong.
 <div class="merjong">5'55m-55"5s-555'0''p-X55Xz</div>
 ```
 
-![img/merjong-sample.png](img/merjong-sample.png)
+![img/merjong-sample.png](https://raw.githubusercontent.com/merjong-js/merjong/refs/heads/main/img/merjong-sample.png)
 
 ## Merjong MPSZ Notation
 
