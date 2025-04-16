@@ -27,7 +27,7 @@ The following are some examples of Mahjong tile images rendered using Merjong.
 - Question-mark tiles can be written in the following formats: `^(q|[0-9]q|Q[mpszqx])$` (e.g., `q`, `Qq`, `Qm`, `Qx`).
 - When multiple tiles share the same suit and appear consecutively, you can simplify their notation by writing the digits first, followed by a single suit character.  (e.g., `X11Xm`, `123456789s`)
 - Adding a single `'` after the prefix displays the tile sideways. (e.g., `3'45m`)  
-- Adding `''` after the prefix displays the tile on the second level of a sideways stack. (e.g., `3'4''0s`)  
+- Adding `''` after the prefix displays the tile on the second level of a sideways stack. (e.g., `5'0''55s`)  
 - Adding `"` after the prefix displays two stacked sideways tiles. (e.g., `33"3p`)
 - A space between tiles can be written as a `-`. (e.g., `1'23m-45'6m`)
 

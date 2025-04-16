@@ -1,6 +1,6 @@
 {
   "name": "merjong",
-  "version": "0.0.6",
+  "version": "0.0.8",
   "description": "Generation of mahjong tile images from text written in MPSZ notation. ",
   "main": "dist/merjong.js",
   "type": "module",
